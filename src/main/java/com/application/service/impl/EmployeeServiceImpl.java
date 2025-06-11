@@ -6,19 +6,17 @@ import com.application.entity.Employee;
 import com.application.exception.ResourceNotFoundException;
 import com.application.repository.EmployeeRepository;
 import com.application.service.EmployeeService;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 import java.util.UUID;
 
 @Service
+@AllArgsConstructor
 public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository employeeRepository;
-
-    public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
-        this.employeeRepository = employeeRepository;
-    }
 
     @Override
     public EmployeeResponse create(EmployeeRequest request) {

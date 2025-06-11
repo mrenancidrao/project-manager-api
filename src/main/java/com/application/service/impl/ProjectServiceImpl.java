@@ -9,6 +9,7 @@ import com.application.exception.ResourceNotFoundException;
 import com.application.repository.EmployeeRepository;
 import com.application.repository.ProjectRepository;
 import com.application.service.ProjectService;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -18,15 +19,11 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
+@AllArgsConstructor
 public class ProjectServiceImpl implements ProjectService {
 
     private final ProjectRepository projectRepository;
     private final EmployeeRepository employeeRepository;
-
-    public ProjectServiceImpl(ProjectRepository projectRepository, EmployeeRepository employeeRepository) {
-        this.projectRepository = projectRepository;
-        this.employeeRepository = employeeRepository;
-    }
 
     @Override
     public ProjectResponse createProject(ProjectRequest request) {
