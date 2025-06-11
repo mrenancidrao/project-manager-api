@@ -10,8 +10,6 @@ public record ProjectRequest(
         @NotBlank(message = "Nome é obrigatório.")
         String name,
 
-        LocalDateTime creationDate,
-
         String description,
 
         LocalDateTime startDate,
